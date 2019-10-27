@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { environment } from './environments/environment';
+import { environment } from '../environments/environment';
 import * as firebase from 'firebase';
 
 @Component({
@@ -9,15 +9,23 @@ import * as firebase from 'firebase';
 })
 export class AppComponent {
 
+  apiKey: string            = environment.apiKey;
+  authDomain: string        = environment.authDomain;
+  databaseURL: string       = environment.databaseURL;
+  projectId: string         = environment.projectId;
+  storageBucket: string     = environment.storageBucket;
+  messagingSenderId: string = environment.messagingSenderId;
+  appId: string             = environment.appId;
+
   constructor() {
     const config = {
-      apiKey: environment.apiKey,
-      authDomain: environment.authDomain,
-      databaseURL: environment.databaseURL,
-      projectId: environment.projectId,
-      storageBucket: environment.storageBucket,
-      messagingSenderId: environment.messagingSenderId,
-      appId: environment.appId
+      apiKey: this.apiKey,
+      authDomain: this.authDomain,
+      databaseURL: this.databaseURL,
+      projectId: this.projectId,
+      storageBucket: this.storageBucket,
+      messagingSenderId: this.messagingSenderId,
+      appId: this.appId
     }
     firebase.initializeApp(config);
   }
