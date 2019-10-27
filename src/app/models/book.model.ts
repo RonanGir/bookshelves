@@ -1,4 +1,4 @@
-export class Model {
+export class Book {
 
   constructor(public title: string,
               public author: string,
